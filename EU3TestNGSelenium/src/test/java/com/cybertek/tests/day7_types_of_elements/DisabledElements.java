@@ -24,6 +24,7 @@ public class DisabledElements {
         WebElement radioButtonGreen = driver.findElement(By.id("green"));
 
         Assert.assertFalse(radioButtonGreen.isEnabled(), "verify Green rb is NOT enabled");
+
         radioButtonGreen.click(); // no use because Green rb is disabled
 
         Assert.assertFalse(radioButtonGreen.isSelected(), "verify Green rb is selected");
