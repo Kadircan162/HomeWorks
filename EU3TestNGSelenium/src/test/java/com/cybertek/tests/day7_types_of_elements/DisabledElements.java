@@ -34,7 +34,7 @@ public class DisabledElements {
     }
 
     @Test
-    public void test2(){
+    public void test2() throws InterruptedException {
         callChromeDriver();
         driver.get("http://practice.cybertekschool.com/dynamic_controls");
 
