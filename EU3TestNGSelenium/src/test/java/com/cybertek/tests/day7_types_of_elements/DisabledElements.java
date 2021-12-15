@@ -46,7 +46,7 @@ public class DisabledElements {
 
         Assert.assertFalse(inputText.isEnabled(), "verify the input box is NOT enabled");
 
-        inputText.sendKeys("some message");
+        inputText.sendKeys("some message"); //throws NotInteractable error
 
 
     }
