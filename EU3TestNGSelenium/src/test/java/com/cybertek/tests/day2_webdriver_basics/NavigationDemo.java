@@ -15,7 +15,7 @@ public class NavigationDemo {
 
         driver.navigate().to("https://www.facebook.com");
 
-        Thread.sleep(3000); //1 sec equals to 1000 milisec
+        Thread.sleep(3000); //1 sec equals to 1000 millisecond
         driver.navigate().back();
 
         Thread.sleep(3000);
