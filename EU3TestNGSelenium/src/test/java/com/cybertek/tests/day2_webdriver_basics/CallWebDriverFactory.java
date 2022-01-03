@@ -1,6 +1,7 @@
 package com.cybertek.tests.day2_webdriver_basics;
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class CallWebDriverFactory {
@@ -10,5 +11,6 @@ public class CallWebDriverFactory {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
 
         driver.get("https://amazon.com");
+
     }
 }
