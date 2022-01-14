@@ -17,7 +17,7 @@ import org.testng.annotations.*;
 
  */
 
-public class Task2 {
+public class Task2_ExplicitlyWait {
 
     WebDriver driver;
 

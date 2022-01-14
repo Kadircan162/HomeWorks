@@ -5,7 +5,6 @@ import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -20,7 +19,7 @@ import org.testng.annotations.*;
 
  */
 
-public class Task1 {
+public class Task1_Javascriptalert {
 
 WebDriver driver;
 
@@ -35,7 +34,8 @@ WebDriver driver;
         driver.get("https://chercher.tech/practice/explicit-wait-sample-selenium-webdriver");
         driver.manage().window().maximize();
         driver.findElement(By.id("alert")).click();
-        WebDriverWait wait = new WebDriverWait(driver, 900000);
+        WebDriverWait wait = new WebDriverWait(driver, 900000);//no matter what you define as explicit wait time, it stops waiting
+        //once the condition achieved
         wait.until(ExpectedConditions.alertIsPresent());
         Assert.assertTrue(isAlertPresent(), "Alert pup up is not present");
         driver.switchTo( ).alert( ).accept();

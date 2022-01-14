@@ -36,6 +36,7 @@ public class WebDriverFactory {
             driver = new EdgeDriver();
 
         }
+        driver.manage().window().maximize();
         return driver;
     }
 

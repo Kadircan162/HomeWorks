@@ -22,7 +22,7 @@ Task3:
 
  */
 
-public class Task3 {
+public class Task3_InteractWithForm {
 
     WebDriver driver;
 
