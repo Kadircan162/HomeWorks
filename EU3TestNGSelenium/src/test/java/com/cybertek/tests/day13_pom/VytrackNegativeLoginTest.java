@@ -7,13 +7,14 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class NegativeLoginTest extends TestBase{
+public class VytrackNegativeLoginTest extends TestBase{
 
-    LoginPageOM loginPageOM = new LoginPageOM();
+    LoginPageOM loginPageOM;
 
     @Test
     public void wrongPasswordTest(){ //old way of locating web elements
-        driver.findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getKeyValue("wrong_regularusername"));
+        loginPageOM = new LoginPageOM();
+        driver.findElement(By.id("prependedInput")).sendKeys(ConfigurationReader.getKeyValue("regular_username"));
         driver.findElement(By.id("prependedInput2")).sendKeys(ConfigurationReader.getKeyValue("wrong_regularpassword"));
         driver.findElement(By.id("_submit")).click();
         String expectedUrl = ConfigurationReader.getKeyValue("loginpage_url");
@@ -25,7 +26,7 @@ public class NegativeLoginTest extends TestBase{
 
     @Test
     public void wrongPasswordTest2(){//with the new way of locating web elements using page object model class
-
+        loginPageOM = new LoginPageOM();
         loginPageOM.usernameInput2.sendKeys(ConfigurationReader.getKeyValue("regular_username"));
         loginPageOM.passwordInput.sendKeys(ConfigurationReader.getKeyValue("wrong_regularpassword"));
         loginPageOM.loginButton.click();
@@ -37,7 +38,7 @@ public class NegativeLoginTest extends TestBase{
 
     @Test
     public void wrongUsernameTest(){
-
+        loginPageOM = new LoginPageOM();
         loginPageOM.usernameInput.sendKeys(ConfigurationReader.getKeyValue("wrong_regularusername"));
         loginPageOM.passwordInput.sendKeys(ConfigurationReader.getKeyValue("regular_password"));
         loginPageOM.loginButton.click();

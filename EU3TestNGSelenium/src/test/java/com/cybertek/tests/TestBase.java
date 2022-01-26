@@ -67,14 +67,13 @@ public class TestBase {
             extentLogger.fail(result.getName());//fail method returns an ExtentTest object with failed TC info (name, logs, etc.)
 
             //take the screenshot and return location of it
-            String screenShotPath = BrowserUtils.getScreenshot(result.getName());
+            String screenshotPath = BrowserUtils.getScreenshot(result.getName());
 
             //add your screenshot to your report
-            extentLogger.addScreenCaptureFromPath(screenShotPath);
+            extentLogger.addScreenCaptureFromPath(screenshotPath);
 
             //capture the exception and put inside the report
             extentLogger.fail(result.getThrowable());
-
         }
         Thread.sleep(1000);
         DriverSetup.closeDriver();

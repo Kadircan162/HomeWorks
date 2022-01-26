@@ -18,7 +18,7 @@ public class NegativeLoginTestWithReport extends TestBase {
         loginPage.usernameInput.sendKeys("user10");
 
         extentLogger.info("Enter Password: somepassword");
-        loginPage.passwordInput.sendKeys("UserUser123");
+        loginPage.passwordInput.sendKeys("somepassword");
 
         extentLogger.info("Click login Button");
         loginPage.loginBtn.click();
