@@ -43,7 +43,7 @@ public class ExplicitWaitExample {
         driver.get("http://practice.cybertekschool.com/dynamic_loading/1");
         driver.findElement(By.cssSelector("#start>button[class='btn btn-primary']")).click();
 
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//interestingly the implicitlyWait method works here although it should not
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);//interestingly the implicitlyWait method works here, although it should not
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#username")));//By visibilityOfElementLocated() method
         //you don't need to write driver.findElement() in parentheses but just By.locatorMethod --> it takes "By locator"

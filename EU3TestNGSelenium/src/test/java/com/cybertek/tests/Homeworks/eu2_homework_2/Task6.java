@@ -33,7 +33,7 @@ public class Task6 {
         String email = driver.findElement(By.cssSelector("#email")).getText();
         System.out.println("email = " + email);
         ((JavascriptExecutor)driver).executeScript("window.open()");
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         driver.get("https://practice-cybertekschool.herokuapp.com");
         driver.findElement(By.linkText("Sign Up For Mailing List")).click();

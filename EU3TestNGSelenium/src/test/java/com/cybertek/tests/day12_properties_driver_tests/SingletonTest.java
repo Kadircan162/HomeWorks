@@ -1,6 +1,7 @@
 package com.cybertek.tests.day12_properties_driver_tests;
 
-import com.cybertek.utilities.Driver;
+import com.cybertek.utilities.ConfigurationReader;
+import com.cybertek.utilities.DriverSetup;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -18,15 +19,17 @@ public class SingletonTest {
 
     @Test
     public void testDriver1(){
-        WebDriver driver = Driver.getDriver();
-        driver.get("https://www.amazon.com");
+        WebDriver driver = DriverSetup.getDriver();
+        System.out.println("driver = " + driver);
+        //driver.get("https://www.amazon.com");
 
-        //Driver.closeDriver();
+        DriverSetup.closeDriver();
     }
     @Test
     public void testDriver2(){
-
-        Driver.getDriver().get("https://www.google.com");
+        DriverSetup.getDriver().get("https://www.google.com");
+        WebDriver driver = DriverSetup.getDriver();
+        driver.get(ConfigurationReader.getKeyValue("loginpage_url"));
 
     }
 }

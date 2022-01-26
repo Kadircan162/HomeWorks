@@ -3,6 +3,8 @@ package com.cybertek.utilities;
 reads the properties file 'configuration.properties' which works as a data control center
 */
 
+import org.openqa.selenium.WebDriver;
+
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -26,7 +28,7 @@ public class ConfigurationReader {
         }
     }
 
-    public static String get(String keyName){
+    public static String getKeyValue(String keyName){
         return properties.getProperty(keyName);
     }
 

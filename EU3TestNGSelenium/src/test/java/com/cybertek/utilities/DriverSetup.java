@@ -11,15 +11,15 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class Driver {
-
-    private Driver() {}
+public class DriverSetup { //DriverSetup with Singleton framework - the driver is valid (static) in all over the project when called.
+    private DriverSetup() {}//cannot be instanced by any other class
 
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
+
         if (driver == null) {
-            String browser = ConfigurationReader.get("browser");
+            String browser = ConfigurationReader.getKeyValue("browser");
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
@@ -43,14 +43,12 @@ public class Driver {
                     WebDriverManager.iedriver().setup();
                     driver = new InternetExplorerDriver();
                     break;
-
                 case "edge":
                     if (!System.getProperty("os.name").toLowerCase().contains("windows"))
                         throw new WebDriverException("Your OS doesn't support Edge");
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
-
                 case "safari":
                     if (!System.getProperty("os.name").toLowerCase().contains("mac"))
                         throw new WebDriverException("Your OS doesn't support Safari");

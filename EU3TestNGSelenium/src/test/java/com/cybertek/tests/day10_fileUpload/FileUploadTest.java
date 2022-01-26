@@ -23,10 +23,12 @@ public class FileUploadTest {
 
     @Test
     public void fileUploadTest(){
+
         driver.get("http://practice.cybertekschool.com/upload");
         WebElement upload = driver.findElement(By.id("file-upload"));
         upload.sendKeys("C:\\Users\\arate\\Desktop\\New Text Document.txt");
         driver.findElement(By.id("file-submit")).click();
 
     }
+
 }
