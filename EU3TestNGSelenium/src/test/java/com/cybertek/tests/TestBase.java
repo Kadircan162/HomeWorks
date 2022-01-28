@@ -15,6 +15,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
 
@@ -23,11 +24,11 @@ public class TestBase {
     protected WebDriverWait wait;
 
     //this class is used to create HTML report file
-    protected ExtentHtmlReporter htmlReporter;
+    protected static ExtentHtmlReporter htmlReporter;
     //this class is used for starting nad building reports
-    protected ExtentReports report;
+    protected static ExtentReports report;
     //this will  define a test, enables adding logs, authors, test steps
-    protected ExtentTest extentLogger;
+    protected static ExtentTest extentLogger;
 
     @BeforeTest
     public void setUpTest(){
@@ -58,6 +59,7 @@ public class TestBase {
         driver.get(ConfigurationReader.getKeyValue("loginpage_url"));
         actions = new Actions(driver);
         wait = new WebDriverWait(driver, 10);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     @AfterMethod
     public void burnDown(ITestResult result) throws InterruptedException, IOException {//ITest result describes the result of a test in TestNG

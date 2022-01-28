@@ -30,7 +30,6 @@ public class ExplicitWaitExample {
         driver.quit();
     }
 
-    @Ignore
     @Test
     public void explicitWaitTest(){
         //There are two problems for webpage elements:

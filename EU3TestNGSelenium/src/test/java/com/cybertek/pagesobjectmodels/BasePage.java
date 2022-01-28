@@ -37,7 +37,7 @@ public abstract class BasePage{//no standalone page available like login page. W
      * @return page name, for example: Dashboard
      */
     public String getPageSubTitle() {
-        //ant time we are verifying page name, or page subtitle, loader mask appears
+        //any time we are verifying page name, or page subtitle, loader mask appears
         waitUntilLoaderScreenDisappear();
 //        BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
@@ -59,13 +59,21 @@ public abstract class BasePage{//no standalone page available like login page. W
 
     }
 
+//    public void navigateToActivityCalenderEvents(){
+//        LoginPage loginPage = new LoginPage();
+//        loginPage.loginAsStoreManager();
+//
+//        DashboardPage dashboardPage = new DashboardPage();
+//        dashboardPage.waitUntilLoaderScreenDisappear();
+//        dashboardPage.navigateToModule("Activities", "Calendar Events");
+//        dashboardPage.waitUntilLoaderScreenDisappear();
+//    }
+
     public String getUserName(){
         waitUntilLoaderScreenDisappear();
         BrowserUtils.waitForVisibility(userName, 5);
         return userName.getText();
     }
-
-
 
     public void logOut(){
         BrowserUtils.waitFor(2);

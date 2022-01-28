@@ -2,7 +2,22 @@
 <suite name="Vytrack Automation" verbose="1">
     <test name="Vytrack Smoke Test">
         <packages>
-            <package name="com.cybertek.tests.day14_ExtentReports"></package>
+            <package name="com.cybertek.tests.day15_review"></package>
         </packages>
+        <classes>
+            <class name="com.cybertek.tests.day15_review.VerifyContactInfoTest">
+                <methods>
+                    <include name="wrongUsernameTest"></include>
+                </methods>
+            </class>
+            
+            <class name="com.cybertek.tests.day14_ExtentReports.NegativeLoginTestWithReport">
+                <methods>
+                    <exclude name="wrongPasswordTest"></exclude>
+                </methods>
+            </class>
+
+            <class name="com.cybertek.tests.day14_ExtentReports.ExtentDemoTest"></class>
+        </classes>
     </test>
 </suite>

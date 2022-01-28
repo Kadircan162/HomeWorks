@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Vytrack Automation" verbose="1">
+    <test name="Vytrack Smoke Test">
+        <packages>
+            <package name="com.cybertek.tests.day13_pom"></package>
+            <package name="com.cybertek.tests.day14_ExtentReports"></package>
+            <package name="com.cybertek.tests.day15_review"></package>
+        </packages>
+        <classes>
+           <class name="com.cybertek.tests.day12_properties_driver_tests.LoginTest"></class>
+           <class name="com.cybertek.tests.day12_properties_driver_tests.SingletonExample"></class>
+           <class name="com.cybertek.tests.day9_waits.ExplicitWaitExample">
+               <methods>
+                   <include name="explicitWaitTest"></include>
+               </methods>
+           </class>
+        </classes>
+    </test>
+</suite>
