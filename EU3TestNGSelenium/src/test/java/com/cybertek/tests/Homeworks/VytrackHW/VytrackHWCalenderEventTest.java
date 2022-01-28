@@ -153,8 +153,7 @@ public class VytrackHWCalenderEventTest extends TestBase {
             calendarEventsPage.waitUntilLoaderScreenDisappear();
         }
 
-
-        wait.until(ExpectedConditions.visibilityOf(calendarEventsPage.labelList.get(0)));
+        wait.until(ExpectedConditions.visibilityOf(calendarEventsPage.keyList.get(0)));
         Map<String, String> capitalCities = calendarEventsPage.getLabelDescriptionTable();
 
         extentLogger.info("Verify Title -> Testers meeting");

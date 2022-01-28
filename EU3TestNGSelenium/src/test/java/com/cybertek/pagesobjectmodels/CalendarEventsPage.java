@@ -45,7 +45,7 @@ public class CalendarEventsPage extends BasePage {
     public List<WebElement> titleList;
 
     @FindBy(xpath = "//label[@class='control-label']")
-    public List<WebElement> labelList;
+    public List<WebElement> keyList;
 
     @FindBy(xpath = "//*[@class='pagination pagination-centered']//label[2]")
     public WebElement numberOfPageSetText;
@@ -55,14 +55,14 @@ public class CalendarEventsPage extends BasePage {
 
         List<WebElement> descriptionList = new ArrayList<>();
 
-        for(int i=0; i<labelList.size(); i++){
+        for(int i=0; i<keyList.size(); i++){
             descriptionList.add(DriverSetup.getDriver().findElement(By.xpath("(//div[@class='controls'])[" + (i+1) + "]/div")));
         }
 
         Map<String,String> labelDescription = new HashMap<>();
 
-        for (int i=0; i<labelList.size(); i++) {
-            labelDescription.put(labelList.get(i).getText(), descriptionList.get(i).getText());
+        for (int i=0; i<keyList.size(); i++) {
+            labelDescription.put(keyList.get(i).getText(), descriptionList.get(i).getText());
         }
 
        return labelDescription;
